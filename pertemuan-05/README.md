@@ -35,3 +35,11 @@ Pengujian Aplikasi
 - Pengujian pengisian form dengan data sebelumnya.
 - Pengujian penyimpanan perubahan data.
 - Pengujian validasi input.
+
+# TAHAP F
+Pengujian Aplikasi
+
+- Menguji tombol hapus dan konfirmasi penghapusan.
+- Menguji penghapusan kendaraan berdasarkan ID.
+- Memeriksa perubahan data pada daftar kendaraan.
+- Menguji penanganan ID yang tidak valid.
