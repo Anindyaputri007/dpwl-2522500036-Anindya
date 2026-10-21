@@ -29,3 +29,9 @@ Pengujian
 - Pengujian unggah foto.
 - Pengujian penyimpanan data kendaraan ke database.
 
+# TAHAP E
+Pengujian Aplikasi
+- Pengujian tombol edit dan pengambilan data kendaraan.
+- Pengujian pengisian form dengan data sebelumnya.
+- Pengujian penyimpanan perubahan data.
+- Pengujian validasi input.
