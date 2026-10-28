@@ -24,3 +24,13 @@ application/views/home/index.php.
 - **View:** Berkas `header.php`, `navbar.php`, `footer.php`, dan `index.php` telah disiapkan pada folder `application/views/katalog/`.
 - **URL pengujian:** `http://localhost/dpwl-2522500036/index.php/katalog`
 - **Hasil pengujian:** [Halaman katalog dapat diakses melalui URL http://localhost/dpwl-2522500036/index.php/katalog, data mobil tampil sesuai data dari model, dan halaman menggunakan komponen tampilan katalog.].
+
+# tahap c
+### Hasil Pengujian Tahap C – Detail Kendaraan
+
+- **Route:** Route `katalog/detail/(:any)` telah ditambahkan pada `routes.php`.
+- **Controller:** Method `detail()` telah ditambahkan pada `Katalog_controller.php`.
+- **Model:** Method `findByNoPlat()` digunakan untuk mengambil data kendaraan berdasarkan nomor plat.
+- **View:** Berkas `detail.php` telah disiapkan pada folder `application/views/katalog/`.
+- **URL pengujian:** `http://localhost/dpwl-2522500036/index.php/katalog/detail/[nomor-plat]`
+- **Hasil pengujian:** [Halaman detail kendaraan dapat diakses melalui katalog. Informasi kendaraan ditampilkan sesuai data yang dipilih, dan route detail berhasil menghubungkan Controller, Model, dan View.].
