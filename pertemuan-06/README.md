@@ -73,3 +73,17 @@ F.5 Menguji Pembaruan Profil dan Penanganan Input Tidak Valid.
 -Input yang tidak valid ditolak oleh sistem.
 
 - Perubahan data profil tersimpan di database.
+
+# tahap g
+Hasil Pengujian Tahap G – Menghilangkan index.php dari URL Aplikasi
+
+File .htaccess: Sudah dibuat dan dikonfigurasi untuk mengarahkan URL ke index.php.
+File index.php: Pengambilan URI telah disesuaikan menggunakan parameter route.
+File config.php: base_url disesuaikan dengan nama folder aplikasi dan index_page dikosongkan.
+File url_helper.php: Fungsi site_url() telah disesuaikan agar URL tidak menampilkan index.php.
+File routes.php: Rute default diperiksa sesuai konfigurasi aplikasi.
+Pengujian URL: Perlu dipastikan halaman utama dan navigasi dapat diakses tanpa index.php.
+
+Kesimpulan: Pengujian akhir dilakukan dengan membuka aplikasi dan memeriksa URL serta fungsi navigasinya.
+
+Penghilangan index.php dari URL aplikasi dilakukan melalui konfigurasi .htaccess, index.php, config.php, url_helper.php, dan routes.php. Perubahan ini bertujuan agar URL aplikasi lebih sederhana dan mudah dibaca. Keberhasilan penerapan ditentukan melalui pengujian akses halaman utama dan navigasi aplikasi tanpa index.php.
