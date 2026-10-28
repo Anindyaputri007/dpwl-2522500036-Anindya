@@ -34,3 +34,13 @@ application/views/home/index.php.
 - **View:** Berkas `detail.php` telah disiapkan pada folder `application/views/katalog/`.
 - **URL pengujian:** `http://localhost/dpwl-2522500036/index.php/katalog/detail/[nomor-plat]`
 - **Hasil pengujian:** [Halaman detail kendaraan dapat diakses melalui katalog. Informasi kendaraan ditampilkan sesuai data yang dipilih, dan route detail berhasil menghubungkan Controller, Model, dan View.].
+
+# tahap d
+### Hasil Pengujian Tahap D – Registrasi Akun Penyewa
+
+- **Route:** Route `auth/register` telah ditambahkan pada `routes.php`.
+- **Model:** Berkas `Penyewa_model.php` telah dibuat untuk memeriksa username dan menyimpan data penyewa.
+- **Controller:** Proses registrasi telah ditambahkan pada `Auth.php`.
+- **View:** Berkas `register.php` telah disiapkan pada folder `application/views/auth/`.
+- **URL pengujian:** `http://localhost/dpwl-2522500036/index.php/auth/register`
+- **Hasil pengujian:** [Formulir registrasi dapat diakses, data penyewa yang valid dapat disimpan ke database, input yang tidak valid ditolak, dan username yang sudah terdaftar tidak dapat digunakan kembali.].
