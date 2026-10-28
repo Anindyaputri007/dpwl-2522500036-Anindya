@@ -44,3 +44,18 @@ application/views/home/index.php.
 - **View:** Berkas `register.php` telah disiapkan pada folder `application/views/auth/`.
 - **URL pengujian:** `http://localhost/dpwl-2522500036/index.php/auth/register`
 - **Hasil pengujian:** [Formulir registrasi dapat diakses, data penyewa yang valid dapat disimpan ke database, input yang tidak valid ditolak, dan username yang sudah terdaftar tidak dapat digunakan kembali.].
+
+# tahap e
+
+E.1 Membuat Route Login dan Logout Penyewa.
+E.2 Menambahkan Proses Login dan Logout pada application/controllers/Auth.php.
+E.3 Membuat View Login pada application/views/auth/login_penyewa.php.
+E.4 Menguji Login Berhasil, Login Gagal, Sesi, Logout, dan Pembatasan Akses.
+
+- Halaman login penyewa dapat diakses.
+
+- Data login yang valid dapat digunakan untuk masuk.
+
+- Login dengan data yang tidak valid ditolak.
+
+- Penyewa dapat logout dan mengakhiri sesi login.
