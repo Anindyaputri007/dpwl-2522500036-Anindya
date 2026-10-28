@@ -58,3 +58,18 @@ E.4 Menguji Login Berhasil, Login Gagal, Sesi, Logout, dan Pembatasan Akses.
 
 - Login dengan data yang tidak valid ditolak.
 
+
+# tahap f
+F.1 Membuat Route Profil dan Persyaratan Autentikasi.
+F.2 Mengintegrasikan application/controllers/Penyewa_controller.php.
+F.3 Memperbarui Profil melalui application/models/Penyewa_model.php.
+F.4 Membuat View Profil pada application/views/penyewa/profil.php.
+F.5 Menguji Pembaruan Profil dan Penanganan Input Tidak Valid.
+
+- Halaman profil hanya dapat diakses oleh penyewa yang sudah login.
+
+- Data profil penyewa dapat ditampilkan dan diperbarui.
+
+-Input yang tidak valid ditolak oleh sistem.
+
+- Perubahan data profil tersimpan di database.
