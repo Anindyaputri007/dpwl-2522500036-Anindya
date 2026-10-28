@@ -58,4 +58,3 @@ E.4 Menguji Login Berhasil, Login Gagal, Sesi, Logout, dan Pembatasan Akses.
 
 - Login dengan data yang tidak valid ditolak.
 
-- Penyewa dapat logout dan mengakhiri sesi login.
