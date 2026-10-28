@@ -46,7 +46,7 @@ class Penyewa_model
   public function create(array $data): bool 
   { 
     $sql = "INSERT INTO t_penyewa ( 
-  user_plg, 
+ user_plg, 
               sandi, 
               nik, 
               nm_lngkp, 
@@ -191,4 +191,4 @@ $stmt->close();
     return $row !== null 
       && password_verify($passwordSaatIni, $row['sandi']); 
   } 
-} 
+}
