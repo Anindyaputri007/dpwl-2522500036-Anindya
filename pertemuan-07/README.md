@@ -20,3 +20,19 @@ Pengelolaan kendaraan dan foto tersedia.
 ### Kesimpulan
 Tahap B.1 berfokus pada pembuatan fondasi model transaksi untuk mendukung pengembangan fitur keranjang dan checkout pada tahap berikutnya.
 Profil tenant dapat diakses.
+
+## P7 — Tahap B.2: Membuat Controller Transaksi
+
+### Perubahan
+- Membuat file `application/controllers/Transaksi_controller.php`.
+- Menghubungkan controller dengan `Transaksi_model`.
+- Menambahkan method `tambah()` untuk menangani permintaan penambahan kendaraan ke keranjang.
+- Menyiapkan pemeriksaan login penyewa dan metode HTTP POST.
+- Menyiapkan penanganan pesan keberhasilan dan kesalahan.
+### Hasil Pemeriksaan
+- File `Transaksi_controller.php` berhasil dibuat.
+- Controller terhubung dengan `Transaksi_model`.
+- Kode controller sesuai dengan modul P7.
+- Tidak terdapat kesalahan sintaks PHP.
+### Kesimpulan
+Tahap B.2 menyiapkan controller transaksi sebagai penghubung antara permintaan pengguna dan model transaksi untuk proses penambahan kendaraan ke keranjang.
