@@ -51,3 +51,19 @@ Tahap B.2 menyiapkan controller transaksi sebagai penghubung antara permintaan p
 
 ### Kesimpulan
 Tahap B.3 menyiapkan route transaksi agar permintaan penambahan kendaraan ke keranjang dapat diarahkan ke controller transaksi.
+
+## P7 — Tahap C.1: Integrasi Tombol Keranjang pada Halaman Detail
+
+### Perubahan
+- Memperbarui formulir Add To Cart pada `application/views/katalog/detail.php`.
+- Mengubah formulir menjadi metode POST menuju route `transaksi/tambah`.
+- Menambahkan input tersembunyi `no_plat` dan `return_to`.
+- Menyesuaikan tampilan tombol berdasarkan status kendaraan dan login penyewa.
+
+### Hasil Pemeriksaan
+- Informasi login dan tombol Login Penyewa serta Registrasi tampil saat belum login.
+- Kendaraan tidak tersedia tidak dapat ditambahkan ke keranjang.
+- Tombol Tambah ke Keranjang tampil saat penyewa sudah login.
+
+### Kesimpulan
+Tahap C.1 mengintegrasikan formulir penambahan kendaraan ke keranjang pada halaman detail kendaraan.
