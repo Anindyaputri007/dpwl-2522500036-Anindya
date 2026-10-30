@@ -34,5 +34,20 @@ Profil tenant dapat diakses.
 - Controller terhubung dengan `Transaksi_model`.
 - Kode controller sesuai dengan modul P7.
 - Tidak terdapat kesalahan sintaks PHP.
-### Kesimpulan
+ Kesimpulan
 Tahap B.2 menyiapkan controller transaksi sebagai penghubung antara permintaan pengguna dan model transaksi untuk proses penambahan kendaraan ke keranjang.
+
+## P7 — Tahap B.3: Membuat Route Transaksi
+
+### Perubahan
+- Menambahkan route `transaksi/tambah` pada `application/config/routes.php`.
+- Menghubungkan route dengan `Transaksi_controller/tambah`.
+- Menyiapkan jalur URL untuk proses penambahan kendaraan ke keranjang.
+
+### Hasil Pemeriksaan
+- Route `transaksi/tambah` telah ditambahkan.
+- Route mengarah ke `Transaksi_controller/tambah`.
+- Tidak terdapat kesalahan sintaks PHP.
+
+### Kesimpulan
+Tahap B.3 menyiapkan route transaksi agar permintaan penambahan kendaraan ke keranjang dapat diarahkan ke controller transaksi.
