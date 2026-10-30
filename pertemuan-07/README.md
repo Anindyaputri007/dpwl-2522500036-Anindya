@@ -67,3 +67,21 @@ Tahap B.3 menyiapkan route transaksi agar permintaan penambahan kendaraan ke ker
 
 ### Kesimpulan
 Tahap C.1 mengintegrasikan formulir penambahan kendaraan ke keranjang pada halaman detail kendaraan.
+
+## P7 — Tahap C.2: Mengintegrasikan Tombol Keranjang pada Halaman Katalog
+
+### Perubahan
+- Memperbarui tombol keranjang pada `application/views/katalog/index.php`.
+- Tombol **Tambah ke Keranjang** aktif jika penyewa sudah login dan kendaraan tersedia.
+- Tombol **Tambah ke Keranjang** nonaktif jika penyewa belum login.
+- Tombol **Tidak Dapat Disewa** ditampilkan jika kendaraan tidak tersedia.
+- Form penambahan kendaraan menggunakan metode `POST` dan mengarah ke `transaksi/tambah`.
+
+### Hasil Pengujian
+- Halaman katalog dapat dibuka.
+- Tombol keranjang nonaktif saat penyewa belum login.
+- Tombol keranjang aktif saat penyewa login dan kendaraan tersedia.
+- Kendaraan yang tidak tersedia tidak dapat ditambahkan ke keranjang.
+
+### Kesimpulan
+Tahap C.2 dilakukan untuk menyesuaikan tombol keranjang pada halaman katalog berdasarkan status login penyewa dan ketersediaan kendaraan.
