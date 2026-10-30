@@ -85,3 +85,23 @@ Tahap C.1 mengintegrasikan formulir penambahan kendaraan ke keranjang pada halam
 
 ### Kesimpulan
 Tahap C.2 dilakukan untuk menyesuaikan tombol keranjang pada halaman katalog berdasarkan status login penyewa dan ketersediaan kendaraan.
+
+## P7 — Tahap D.1: Menambahkan Pesan dan Tautan Keranjang pada Navbar
+
+### Perubahan
+- Memperbarui `application/views/katalog/navbar.php`.
+- Menampilkan menu registrasi dan login ketika penyewa belum login.
+- Menampilkan menu logout, profil, dan ikon keranjang ketika penyewa sudah login.
+- Menambahkan tampilan pesan flash pada navbar.
+- Mempertahankan modal pencarian.
+- Menghapus jumlah keranjang statis karena belum terhubung dengan data transaksi.
+
+### Hasil Pengujian
+- Navbar tampil pada halaman katalog.
+- Menu login dan registrasi tampil ketika penyewa belum login.
+- Menu logout dan profil tampil ketika penyewa sudah login.
+- Pesan flash tampil ketika tersedia.
+- Ikon keranjang dan modal pencarian diperiksa.
+
+### Kesimpulan
+Tahap D.1 dilakukan untuk menyesuaikan navbar dengan status login penyewa serta menyiapkan tampilan pesan dan akses keranjang. Pengujian dilakukan untuk memastikan setiap elemen berfungsi sesuai implementasi.
