@@ -167,3 +167,28 @@ Tahap E.1 berhasil. Proses penambahan kendaraan ke keranjang, penyimpanan data t
 Berkas halaman isi keranjang telah dibuat pada tahap F.1. Pengujian tampilan dan fungsi halaman akan dilakukan setelah integrasi dengan controller dan model pada tahap berikutnya.
 
 
+## P7 — Tahap F.2: Menambahkan Method Keranjang dan Lainnya pada Controller Transaksi
+
+### Perubahan
+- Menambahkan method `keranjang()` pada `Transaksi_controller.php`.
+- Menambahkan method `perbaruiPeriode()` untuk memperbarui periode penyewaan.
+- Menambahkan method `hapus()` untuk menghapus kendaraan dari keranjang.
+- Menambahkan method `checkout()` untuk menampilkan konfirmasi dan memproses checkout.
+- Mengintegrasikan method Controller dengan method pada `Transaksi_model.php`.
+- Menambahkan route `transaksi/keranjang`.
+- Menambahkan route `transaksi/perbarui-periode`.
+- Menambahkan route `transaksi/hapus`.
+- Menambahkan route `transaksi/hapus/(:any)`.
+- Menambahkan route `transaksi/checkout`.
+- Menghubungkan ikon keranjang pada navbar ke halaman keranjang.
+
+### Hasil Pengujian
+- Penyewa yang memiliki keranjang aktif dapat membuka halaman keranjang.
+- Data keranjang ditampilkan sesuai dengan akun penyewa yang login.
+- Penyewa tanpa keranjang aktif diarahkan kembali ke katalog dengan pesan bahwa keranjang masih kosong.
+- Jumlah kendaraan pada ikon keranjang sesuai dengan isi keranjang.
+- Periode penyewaan dapat diperbarui.
+- Kendaraan dapat dihapus dari keranjang.
+
+### Kesimpulan
+Tahap F.2 berfokus pada integrasi halaman keranjang dengan Controller, Model, dan route transaksi. Pengujian dilakukan untuk memastikan pengelolaan keranjang dan proses menuju checkout berjalan sesuai dengan ketentuan modul.
