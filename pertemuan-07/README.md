@@ -105,3 +105,21 @@ Tahap C.2 dilakukan untuk menyesuaikan tombol keranjang pada halaman katalog ber
 
 ### Kesimpulan
 Tahap D.1 dilakukan untuk menyesuaikan navbar dengan status login penyewa serta menyiapkan tampilan pesan dan akses keranjang. Pengujian dilakukan untuk memastikan setiap elemen berfungsi sesuai implementasi.
+
+## P7 — Tahap D.2: Mengirim Jumlah Keranjang ke Halaman Katalog dan Detail
+
+### Perubahan
+- Menambahkan method `getJumlahMobilKeranjang()` pada `Transaksi_model.php`.
+- Menghitung jumlah kendaraan dalam keranjang berdasarkan akun penyewa yang sedang login.
+- Mengambil data jumlah keranjang untuk ditampilkan pada navbar.
+- Jumlah keranjang menyesuaikan akun penyewa.
+- Keranjang kosong menampilkan jumlah `0`.
+
+### Hasil Pengujian
+- Jumlah keranjang tampil pada navbar.
+- Jumlah keranjang sesuai dengan data milik akun penyewa.
+- Jumlah keranjang tetap `0` jika belum ada kendaraan yang ditambahkan.
+- Jumlah keranjang tampil pada halaman katalog dan detail kendaraan.
+
+### Kesimpulan
+Tahap D.2 bertujuan menampilkan jumlah kendaraan dalam keranjang berdasarkan akun penyewa yang sedang login.

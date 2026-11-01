@@ -1,4 +1,3 @@
-```php
 <?php
 $namaMobil = (string) ($mobil['nm_mobil'] ?? 'Kendaraan');
 $status = (string) ($mobil['status_unit'] ?? '');
