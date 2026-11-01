@@ -393,7 +393,10 @@ class Transaksi_model
                     (string) $keranjang['wkt_ambil']
                 );
             } else {
-                $sekarang = new DateTimeImmutable('now');
+                $sekarang = new DateTimeImmutable(
+                    'now',
+                    new DateTimeZone('Asia/Jakarta')
+                );
 
                 $tglMulai = $sekarang->format('Y-m-d');
                 $tglSelesai = $sekarang

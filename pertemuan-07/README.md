@@ -133,3 +133,26 @@ Tahap D.2 bertujuan menampilkan jumlah kendaraan dalam keranjang berdasarkan aku
 
 ### Kesimpulan
 Tahap D.3 berhasil. Jumlah kendaraan dalam keranjang berhasil ditampilkan pada navbar dan menyesuaikan data akun penyewa yang sedang login.
+
+
+## P7 — Tahap E.1: Mengintegrasikan Proses Penambahan Kendaraan ke Keranjang
+
+### Perubahan
+- Melengkapi method pada `Transaksi_model.php` untuk proses penambahan kendaraan ke keranjang.
+- Memeriksa ketersediaan kendaraan sebelum ditambahkan.
+- Membuat kode transaksi untuk keranjang penyewa.
+- Menyimpan data transaksi ke tabel `t_sewa`.
+- Menyimpan kendaraan yang dipilih ke tabel `t_pilih`.
+- Mencegah kendaraan yang sama ditambahkan dua kali dalam keranjang.
+- Menampilkan pesan notifikasi setelah proses penambahan kendaraan.
+
+### Hasil Pengujian
+-  Kendaraan berhasil ditambahkan ke tabel `t_pilih`.
+-  Data transaksi berhasil tersimpan pada tabel `t_sewa`.
+-  Beberapa kendaraan menggunakan kode transaksi yang sama.
+-  Kendaraan yang sudah ada dalam keranjang tidak dapat ditambahkan kembali.
+-  Jumlah kendaraan pada ikon keranjang tampil sesuai data.
+-  Pesan notifikasi setelah penambahan kendaraan berhasil ditampilkan.
+
+### Kesimpulan
+Tahap E.1 berhasil. Proses penambahan kendaraan ke keranjang, penyimpanan data transaksi, dan penampilan pesan notifikasi telah berhasil diuji.

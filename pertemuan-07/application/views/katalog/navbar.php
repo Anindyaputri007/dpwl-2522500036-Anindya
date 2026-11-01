@@ -1,8 +1,12 @@
+
 <?php
 $isPenyewaLogin = !empty($_SESSION['penyewa_user_plg']);
 
 $flashPenyewaNav = $_SESSION['flash_penyewa_nav'] ?? null;
 unset($_SESSION['flash_penyewa_nav']);
+
+$flashTransaksi = $_SESSION['flash_transaksi'] ?? null;
+unset($_SESSION['flash_transaksi']);
 
 $e = static function ($value): string {
     return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
@@ -148,18 +152,19 @@ $e = static function ($value): string {
                 <?php if ($isPenyewaLogin): ?>
 
                     <!-- Ikon Keranjang -->
-<a
-    class="nav-icon position-relative text-decoration-none"
-    href="#"
-    title="Keranjang Saya"
-    aria-label="Keranjang Saya">
+                    <a
+                        class="nav-icon position-relative text-decoration-none"
+                        href="#"
+                        title="Keranjang Saya"
+                        aria-label="Keranjang Saya">
 
-    <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
 
-    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-dark">
-        <?= (int) ($jumlahKeranjang ?? 0) ?>
-    </span>
-</a>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-dark">
+                            <?= (int) ($jumlahKeranjang ?? 0) ?>
+                        </span>
+                    </a>
+
                     <!-- Ikon Profil Penyewa -->
                     <a
                         class="nav-icon text-decoration-none"
@@ -180,22 +185,49 @@ $e = static function ($value): string {
 
 <!-- Pesan Flash -->
 <?php if ($flashPenyewaNav !== null): ?>
-    <div class="container-fluid px-0">
-        <div class="container py-3">
-            <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
+    <div class="container py-3">
+        <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
 
-                <?= $e($flashPenyewaNav) ?>
+            <?= $e($flashPenyewaNav) ?>
 
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="alert"
-                    aria-label="Tutup">
-                </button>
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Tutup">
+            </button>
 
-            </div>
         </div>
     </div>
+<?php endif; ?>
+
+<?php if (is_array($flashTransaksi) && !empty($flashTransaksi['message'])): ?>
+
+    <?php
+    $tipeFlash = $flashTransaksi['type'] ?? 'info';
+
+    $tipeAlert = in_array(
+        $tipeFlash,
+        ['success', 'danger', 'warning', 'info'],
+        true
+    ) ? $tipeFlash : 'info';
+    ?>
+
+    <div class="container py-3">
+        <div class="alert alert-<?= $e($tipeAlert) ?> alert-dismissible fade show mb-0" role="alert">
+
+            <?= $e($flashTransaksi['message']) ?>
+
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Tutup">
+            </button>
+
+        </div>
+    </div>
+
 <?php endif; ?>
 
 <!-- Modal Pencarian -->
@@ -237,3 +269,4 @@ $e = static function ($value): string {
 
     </div>
 </div>
+ 
