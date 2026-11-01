@@ -148,15 +148,18 @@ $e = static function ($value): string {
                 <?php if ($isPenyewaLogin): ?>
 
                     <!-- Ikon Keranjang -->
-                    <a
-                        class="nav-icon position-relative text-decoration-none"
-                        href="<?= $e(site_url('transaksi/keranjang')) ?>"
-                        title="Keranjang Saya"
-                        aria-label="Keranjang Saya">
+<a
+    class="nav-icon position-relative text-decoration-none"
+    href="#"
+    title="Keranjang Saya"
+    aria-label="Keranjang Saya">
 
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                    </a>
+    <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
 
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-dark">
+        <?= (int) ($jumlahKeranjang ?? 0) ?>
+    </span>
+</a>
                     <!-- Ikon Profil Penyewa -->
                     <a
                         class="nav-icon text-decoration-none"

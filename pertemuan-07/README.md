@@ -123,3 +123,13 @@ Tahap D.1 dilakukan untuk menyesuaikan navbar dengan status login penyewa serta 
 
 ### Kesimpulan
 Tahap D.2 bertujuan menampilkan jumlah kendaraan dalam keranjang berdasarkan akun penyewa yang sedang login.
+
+## P7 — Tahap D.3: Mengirim Jumlah Keranjang ke Halaman Profil Penyewa
+### Hasil Pengujian
+- [x] Jumlah keranjang tampil pada navbar.
+- [x] Jumlah keranjang sesuai dengan data milik akun penyewa.
+- [x] Jumlah keranjang bertambah setelah kendaraan ditambahkan.
+- [x] Jumlah keranjang tampil pada halaman katalog dan detail kendaraan.
+
+### Kesimpulan
+Tahap D.3 berhasil. Jumlah kendaraan dalam keranjang berhasil ditampilkan pada navbar dan menyesuaikan data akun penyewa yang sedang login.
