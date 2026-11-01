@@ -156,3 +156,14 @@ Tahap D.3 berhasil. Jumlah kendaraan dalam keranjang berhasil ditampilkan pada n
 
 ### Kesimpulan
 Tahap E.1 berhasil. Proses penambahan kendaraan ke keranjang, penyimpanan data transaksi, dan penampilan pesan notifikasi telah berhasil diuji.
+
+
+## P7 — Tahap F.1: Membuat Halaman Isi Keranjang
+
+### Perubahan
+- Membuat berkas `application/views/transaksi/keranjang.php`.
+- Menyiapkan halaman khusus untuk menampilkan isi keranjang penyewa.
+### Kesimpulan
+Berkas halaman isi keranjang telah dibuat pada tahap F.1. Pengujian tampilan dan fungsi halaman akan dilakukan setelah integrasi dengan controller dan model pada tahap berikutnya.
+
+
