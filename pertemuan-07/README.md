@@ -192,3 +192,37 @@ Berkas halaman isi keranjang telah dibuat pada tahap F.1. Pengujian tampilan dan
 
 ### Kesimpulan
 Tahap F.2 berfokus pada integrasi halaman keranjang dengan Controller, Model, dan route transaksi. Pengujian dilakukan untuk memastikan pengelolaan keranjang dan proses menuju checkout berjalan sesuai dengan ketentuan modul.
+
+
+## P7 — Tahap F.3: Membuat Halaman Konfirmasi Transaksi dan Menguji Checkout
+
+### Perubahan
+- Membuat berkas `application/views/transaksi/konfirmasi.php`.
+- Menampilkan ringkasan transaksi dan kode sewa.
+- Menampilkan periode penyewaan dan waktu pengambilan.
+- Menampilkan daftar kendaraan beserta harga dan durasi sewa.
+- Menampilkan total biaya penyewaan.
+- Menghitung uang muka (DP) sebesar 30% dari total biaya.
+- Menampilkan sisa pembayaran setelah DP.
+- Menambahkan tombol kembali ke keranjang.
+- Menambahkan formulir untuk mengajukan checkout.
+- Mengintegrasikan proses checkout dengan `Transaksi_controller.php` dan `Transaksi_model.php`.
+
+### Hasil Pengujian
+- Halaman konfirmasi transaksi dapat ditampilkan.
+- Informasi transaksi tampil sesuai dengan data keranjang.
+- Perhitungan DP sebesar 30% sesuai dengan total biaya.
+- Perhitungan sisa pembayaran sesuai dengan total biaya dikurangi DP.
+- Tombol kembali ke keranjang berfungsi.
+- Proses checkout berhasil dilakukan.
+- Status transaksi pada tabel `t_sewa` berubah menjadi `diajukan`.
+- Data pembayaran DP berhasil disimpan pada tabel `t_bayar`.
+- Jenis pembayaran tercatat sebagai `dp`.
+- Metode pembayaran tercatat sebagai `transfer`.
+- Status pembayaran tercatat sebagai `pending`.
+- Nominal pembayaran sesuai dengan perhitungan DP 30%.
+- Pesan notifikasi checkout berhasil ditampilkan setelah transaksi diajukan.
+
+### Kesimpulan
+Tahap F.3 berfokus pada pembuatan halaman konfirmasi transaksi dan integrasi proses checkout. Sistem menampilkan ringkasan penyewaan, menghitung DP sebesar 30%, serta menyimpan data pengajuan transaksi dan pembayaran ke dalam database.
+
