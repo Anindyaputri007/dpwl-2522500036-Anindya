@@ -226,3 +226,26 @@ Tahap F.2 berfokus pada integrasi halaman keranjang dengan Controller, Model, da
 ### Kesimpulan
 Tahap F.3 berfokus pada pembuatan halaman konfirmasi transaksi dan integrasi proses checkout. Sistem menampilkan ringkasan penyewaan, menghitung DP sebesar 30%, serta menyimpan data pengajuan transaksi dan pembayaran ke dalam database.
 
+## P7 — Tahap F.3.3: Menguji Proses Checkout Transaksi
+
+### Perubahan
+- Mengintegrasikan proses checkout pada `Transaksi_controller.php`.
+- Memastikan transaksi hanya dapat di-checkout jika masih berstatus `keranjang`.
+- Mengubah status transaksi menjadi `diajukan` setelah checkout berhasil.
+- Menyimpan data pembayaran DP sebesar 30% dari total biaya transaksi.
+- Menampilkan pesan notifikasi setelah transaksi diajukan.
+
+### Hasil Pengujian
+- Proses checkout berhasil dilakukan pada transaksi yang berstatus `keranjang`.
+- Status transaksi pada tabel `t_sewa` berubah menjadi `diajukan`.
+- Data pembayaran DP berhasil disimpan pada tabel `t_bayar`.
+- Jenis pembayaran tercatat sebagai `dp`.
+- Metode pembayaran tercatat sebagai `transfer`.
+- Status pembayaran tercatat sebagai `pending`.
+- Nominal pembayaran sesuai dengan perhitungan DP sebesar 30%.
+- Transaksi yang telah diajukan tidak dapat di-checkout kembali sebagai keranjang aktif.
+- Akses kembali ke halaman checkout menampilkan pesan bahwa keranjang tidak ditemukan, bukan milik akun ini, atau tidak lagi berstatus keranjang.
+- Akses kembali ke halaman keranjang menampilkan pesan bahwa keranjang tidak ditemukan atau bukan milik akun ini.
+
+### Kesimpulan
+Tahap F.3.3 berfokus pada pengujian proses checkout transaksi. Transaksi yang telah diajukan tidak dapat digunakan kembali sebagai keranjang aktif. Checkout merupakan proses pengajuan transaksi kepada admin, bukan bukti bahwa pembayaran telah dilakukan atau transaksi telah disetujui.
