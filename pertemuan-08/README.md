@@ -13,3 +13,10 @@ Menambahkan file `manajemen_penyewa_model.php` sebagai bagian dari implementasi 
 
 - Menambahkan menu **Manajemen Penyewa** pada file `sidebar.php`.
 - Menu ditambahkan setelah menu Manajemen Kendaraan.
+
+
+# Tahap D 
+## Controller Manajemen Penyewa
+
+- Membuat file `application/controllers/Manajemen_penyewa_controller.php`.
+- Memanggil `Manajemen_penyewa_model.php` pada constructor.
