@@ -40,3 +40,7 @@ $route['transaksi/perbarui-periode'] = 'Transaksi_controller/perbaruiPeriode';
 $route['transaksi/hapus'] = 'Transaksi_controller/hapus'; 
 $route['transaksi/hapus/(:any)'] = 'Transaksi_controller/hapus/$1'; 
 $route['transaksi/checkout'] = 'Transaksi_controller/checkout'; 
+
+$route['admin/mobil'] = 'Mobil_controller/index';
+$route['admin/penyewa'] = 'Manajemen_penyewa_controller/index';
+$route['admin/penyewa/tambah'] = 'Manajemen_penyewa_controller/tambah';

@@ -223,12 +223,19 @@ class Manajemen_penyewa_model
             );
         }
 
-        $stmt->bind_param('s', $userPlg);
-
         $success = $stmt->execute();
 
-        $stmt->close();
+if (!$success) {
+    $error = $stmt->error;
+    $stmt->close();
 
-        return $success;
+    throw new RuntimeException(
+        'Gagal menyimpan data penyewa: ' . $error
+    );
+}
+
+$stmt->close();
+
+return true;
     }
 }

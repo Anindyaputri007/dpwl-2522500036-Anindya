@@ -20,3 +20,15 @@ Menambahkan file `manajemen_penyewa_model.php` sebagai bagian dari implementasi 
 
 - Membuat file `application/controllers/Manajemen_penyewa_controller.php`.
 - Memanggil `Manajemen_penyewa_model.php` pada constructor.
+
+### 5. Tambah Penyewa
+
+- Menambahkan fungsi `tambah()` pada `Manajemen_penyewa_controller.php`.
+- Menambahkan validasi untuk memastikan data wajib telah diisi.
+- Menggunakan `password_hash()` untuk mengamankan password penyewa.
+- Menambahkan proses penyimpanan data melalui fungsi `create()` pada `Manajemen_penyewa_model.php`.
+- Membuat file view `manajemen_penyewa_form.php` sebagai form tambah penyewa.
+- Menambahkan input username, password, NIK, nama lengkap, nomor HP, dan alamat lengkap.
+- Menambahkan tombol Simpan dan Kembali pada form.
+- Menambahkan route `admin/penyewa/tambah` pada `routes.php`.
+- Menambahkan pesan flash untuk proses penyimpanan data.
