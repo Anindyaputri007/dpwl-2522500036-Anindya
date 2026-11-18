@@ -70,4 +70,38 @@ Pada tahap ini dilakukan pembuatan fitur verifikasi pembayaran oleh admin untuk 
 
 Fitur verifikasi pembayaran admin berhasil dibuat dan diuji. Admin dapat melihat bukti pembayaran serta menerima atau menolak pembayaran penyewa.
 
+## Tahap 4 – Hasil Final
 
+Pada tahap ini dilakukan penyelesaian dan pengujian keseluruhan fitur pembayaran dan verifikasi pembayaran pada aplikasi rental kendaraan dengan menggunakan pengembangan dari praktikum P7.
+
+### Hasil Akhir Pengerjaan
+
+- Penyewa dapat melihat daftar pembayaran.
+- Penyewa dapat melihat detail pembayaran.
+- Penyewa dapat melakukan pembayaran DP melalui transfer.
+- Penyewa dapat mengunggah bukti pembayaran.
+- Admin dapat melihat daftar pembayaran yang menunggu verifikasi.
+- Admin dapat melihat bukti transfer yang diunggah oleh penyewa.
+- Admin dapat menerima pembayaran.
+- Admin dapat menolak pembayaran.
+- Penyewa dapat melihat perubahan status pembayaran setelah diverifikasi oleh admin.
+- Penyewa dapat melihat perubahan status penyewaan setelah proses verifikasi.
+
+### Hasil Pengujian
+
+1. **Pembayaran diterima**
+   - Status pembayaran berubah menjadi `valid`.
+   - Status penyewaan berubah menjadi `disetujui`.
+
+2. **Pembayaran ditolak**
+   - Status pembayaran berubah menjadi `invalid`.
+   - Status penyewaan berubah menjadi `ditolak`.
+
+3. **Tampilan penyewa dan admin**
+   - Halaman pembayaran penyewa dapat digunakan.
+   - Halaman verifikasi admin dapat digunakan.
+   - Bukti pembayaran berhasil ditampilkan.
+
+### Kesimpulan
+
+Pengerjaan P9 berhasil diselesaikan. Fitur pembayaran penyewa dan verifikasi pembayaran admin telah dibuat dan diuji. Seluruh proses utama, mulai dari upload bukti pembayaran hingga penerimaan atau penolakan pembayaran oleh admin, berjalan sesuai hasil pengujian.
