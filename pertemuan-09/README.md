@@ -34,3 +34,39 @@ Pengelolaan kendaraan dan foto tersedia.
 - Data pembayaran DP berhasil ditemukan.
 - Informasi transaksi dan status pembayaran `pending` berhasil ditampilkan.
 
+- Gambar bukti transfer muncul di halaman pembayaran.
+- Gambar berasal dari file di uploads/bayar/.
+- Penyewa lain tidak dapat membuka bukti pembayaran milik akun anindya.
+- Status pembayaran tetap pending.
+
+## Tahap 3 – Membuat Verifikasi Pembayaran
+
+Pada tahap ini dilakukan pembuatan fitur verifikasi pembayaran oleh admin untuk memeriksa bukti pembayaran DP yang telah diunggah oleh penyewa.
+
+### Pengerjaan
+
+- Membuat `Verifikasi_pembayaran_model.php` untuk mengambil data pembayaran dan memproses verifikasi.
+- Membuat `Verifikasi_pembayaran_controller.php` untuk mengatur halaman dan proses verifikasi pembayaran.
+- Membuat `verifikasi_pembayaran_view.php` sebagai halaman daftar pembayaran yang menunggu verifikasi.
+- Menambahkan route untuk halaman verifikasi, proses verifikasi, dan melihat bukti pembayaran.
+- Menambahkan fitur Lihat Bukti untuk menampilkan foto bukti transfer.
+- Membuat fitur Terima dan Tolak Pembayaran.
+- Mengatur perubahan status pembayaran dan status penyewaan berdasarkan tindakan admin.
+
+### Hasil Pengujian
+
+1. **Terima Pembayaran**
+   - Status pembayaran berubah menjadi `valid`.
+   - Status penyewaan berubah menjadi `disetujui`.
+
+2. **Tolak Pembayaran**
+   - Status pembayaran berubah menjadi `invalid`.
+   - Status penyewaan berubah menjadi `ditolak`.
+
+3. **Lihat Bukti Pembayaran**
+   - Admin berhasil melihat foto bukti transfer yang diunggah oleh penyewa.
+
+### Kesimpulan
+
+Fitur verifikasi pembayaran admin berhasil dibuat dan diuji. Admin dapat melihat bukti pembayaran serta menerima atau menolak pembayaran penyewa.
+

@@ -195,6 +195,52 @@ class Pembayaran_model
 
         return $berhasil;
     }
+
+public function getDaftarPembayaranPenyewa(
+    string $userPlg
+): array {
+    $stmt = $this->db->prepare(
+        "SELECT
+            b.kode_bayar,
+            b.kode_sewa,
+            b.tgl_wkt_byr,
+            b.ft_byr,
+            b.mtode_byr,
+            b.nominal,
+            b.sttus_byr,
+            s.tgl_mulai,
+            s.tgl_selesai,
+            s.status_sewa
+         FROM t_bayar b
+         INNER JOIN t_sewa s
+            ON s.kode_sewa = b.kode_sewa
+         WHERE s.user_plg = ?
+           AND b.jns_byr = 'dp'
+         ORDER BY b.tgl_wkt_byr DESC"
+    );
+
+    if (!$stmt) {
+        throw new RuntimeException(
+            'Daftar pembayaran gagal disiapkan.'
+        );
+    }
+
+    $stmt->bind_param('s', $userPlg);
+
+    if (!$stmt->execute()) {
+        $stmt->close();
+
+        throw new RuntimeException(
+            'Daftar pembayaran gagal diambil.'
+        );
+    }
+
+    $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+
+    return $data;
+}
+
     public function getPembayaranTerbaruPenyewa(
     string $userPlg
 ): ?array {

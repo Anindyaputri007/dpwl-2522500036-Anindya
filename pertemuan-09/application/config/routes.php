@@ -47,4 +47,10 @@ $route['admin/penyewa/tambah'] = 'Manajemen_penyewa_controller/tambah';
 
 // P9: Pembayaran
 $route['pembayaran'] = 'Pembayaran_controller/index';
+$route['pembayaran/detail'] = 'Pembayaran_controller/detail';
 $route['pembayaran/upload'] = 'Pembayaran_controller/upload';
+$route['pembayaran/bukti'] = 'Pembayaran_controller/bukti';
+// P9: Verifikasi Pembayaran Admin
+$route['admin/pembayaran'] = 'Verifikasi_pembayaran_controller/index';
+$route['admin/pembayaran/verifikasi'] = 'Verifikasi_pembayaran_controller/verifikasi';
+$route['admin/pembayaran/bukti'] = 'Verifikasi_pembayaran_controller/bukti';
