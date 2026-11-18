@@ -74,6 +74,15 @@ between" id="templatemo_main_nav">
               Katalog Kendaraan 
             </a> 
           </li> 
+
+          <?php if ($isPenyewaLogin): ?>
+    <li class="nav-item">
+        <a class="nav-link"
+           href="<?= $e(site_url('pembayaran')) ?>">
+            Pembayaran
+        </a>
+    </li>
+<?php endif; ?>
  
           <?php if (!$isPenyewaLogin): ?> 
             <li class="nav-item"> 

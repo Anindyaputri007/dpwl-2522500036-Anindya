@@ -1,4 +1,3 @@
-
 <?php
 
 require_once APPPATH . 'models/Pembayaran_model.php';
@@ -15,65 +14,67 @@ class Pembayaran_controller extends Controller
     /**
      * Menampilkan halaman pembayaran berdasarkan kode transaksi.
      */
-    public function index(string $kodeSewa = ''): void
-    {
-        $userPlg = $this->wajibLoginPenyewa();
-        $this->wajibMetode('GET');
+    
+public function index(string $kodeSewa = ''): void
+{
+    $userPlg = $this->wajibLoginPenyewa();
+    $this->wajibMetode('GET');
 
-        $kodeSewa = trim(
-            $kodeSewa !== ''
-                ? $kodeSewa
-                : (string) ($_GET['kode_sewa'] ?? '')
-        );
+    $kodeSewa = trim(
+        $kodeSewa !== ''
+            ? $kodeSewa
+            : (string) ($_GET['kode_sewa'] ?? '')
+    );
 
+    try {
+        // Jika kode sewa kosong, ambil pembayaran terbaru.
         if ($kodeSewa === '') {
-            $this->redirectDenganPesan(
-                'katalog',
-                'error',
-                'Kode transaksi pembayaran tidak ditemukan.'
-            );
-        }
-
-        try {
+            $pembayaran = $this->pembayaranModel
+                ->getPembayaranTerbaruPenyewa($userPlg);
+        } else {
+            // Jika kode sewa tersedia, cari berdasarkan kode tersebut.
             $pembayaran = $this->pembayaranModel
                 ->getPembayaranPenyewaByKodeSewa(
                     $kodeSewa,
                     $userPlg
                 );
+        }
 
-            if ($pembayaran === null) {
-                http_response_code(404);
-                exit(
-                    'Pembayaran tidak ditemukan atau bukan milik akun Anda.'
-                );
-            }
-
-            if (
-                $pembayaran['mtode_byr'] !== 'transfer' ||
-                $pembayaran['jns_byr'] !== 'dp'
-            ) {
-                http_response_code(403);
-                exit('Pembayaran ini tidak dapat diakses melalui halaman ini.');
-            }
-
-            $flash = $_SESSION['flash_pembayaran'] ?? null;
-            unset($_SESSION['flash_pembayaran']);
-
-            $this->view('pembayaran/index', [
-                'pembayaran' => $pembayaran,
-                'flash' => $flash
-            ]);
-        } catch (Throwable $e) {
-            error_log(
-                'Tampilan pembayaran gagal: ' . $e->getMessage()
-            );
-
-            http_response_code(500);
+        if ($pembayaran === null) {
+            http_response_code(404);
             exit(
-                'Halaman pembayaran belum dapat ditampilkan. Silakan coba kembali.'
+                'Pembayaran tidak ditemukan atau bukan milik akun Anda.'
             );
         }
+
+        if (
+            $pembayaran['mtode_byr'] !== 'transfer' ||
+            $pembayaran['jns_byr'] !== 'dp'
+        ) {
+            http_response_code(403);
+            exit('Pembayaran ini tidak dapat diakses melalui halaman ini.');
+        }
+
+        $flash = $_SESSION['flash_pembayaran'] ?? null;
+        unset($_SESSION['flash_pembayaran']);
+
+        $this->view('pembayaran/index', [
+            'pembayaran' => $pembayaran,
+            'flash' => $flash
+        ]);
+
+    } catch (Throwable $e) {
+        error_log(
+            'Tampilan pembayaran gagal: ' . $e->getMessage()
+        );
+
+        http_response_code(500);
+        exit(
+            'Halaman pembayaran belum dapat ditampilkan. Silakan coba kembali.'
+        );
     }
+}
+
 
     /**
      * Memproses unggahan bukti transfer.
@@ -125,7 +126,7 @@ class Pembayaran_controller extends Controller
                 $pembayaran['status_sewa'] !== 'diajukan'
             ) {
                 $this->redirectDenganPesan(
-                    'pembayaran/' . rawurlencode($kodeSewa),
+                    'pembayaran?kode_sewa=' . rawurlencode($kodeSewa),
                     'error',
                     'Pembayaran ini sudah tidak dapat diubah.'
                 );
@@ -136,7 +137,7 @@ class Pembayaran_controller extends Controller
 
             if (!$hasilUpload['success']) {
                 $this->redirectDenganPesan(
-                    'pembayaran/' . rawurlencode($kodeSewa),
+                    'pembayaran?kode_sewa=' . rawurlencode($kodeSewa),
                     'error',
                     $hasilUpload['error']
                 );
@@ -157,14 +158,14 @@ class Pembayaran_controller extends Controller
                 $fileBaru = null;
 
                 $this->redirectDenganPesan(
-                    'pembayaran/' . rawurlencode($kodeSewa),
+                    'pembayaran?kode_sewa=' . rawurlencode($kodeSewa),
                     'error',
                     'Bukti pembayaran belum berhasil disimpan. Periksa kembali status transaksi.'
                 );
             }
 
             $this->redirectDenganPesan(
-                'pembayaran/' . rawurlencode($kodeSewa),
+                'pembayaran?kode_sewa=' . rawurlencode($kodeSewa),
                 'success',
                 'Bukti transfer berhasil diunggah. Pembayaran menunggu verifikasi admin.'
             );
@@ -178,7 +179,7 @@ class Pembayaran_controller extends Controller
             );
 
             $this->redirectDenganPesan(
-                'pembayaran/' . rawurlencode($kodeSewa),
+                'pembayaran?kode_sewa=' . rawurlencode($kodeSewa),
                 'error',
                 'Bukti pembayaran gagal diunggah. Silakan coba kembali.'
             );

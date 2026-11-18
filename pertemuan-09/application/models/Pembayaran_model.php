@@ -1,4 +1,3 @@
-
 <?php
 
 class Pembayaran_model
@@ -196,4 +195,46 @@ class Pembayaran_model
 
         return $berhasil;
     }
+    public function getPembayaranTerbaruPenyewa(
+    string $userPlg
+): ?array {
+    $stmt = $this->db->prepare(
+        "SELECT b.kode_sewa
+         FROM t_bayar b
+         INNER JOIN t_sewa s
+            ON s.kode_sewa = b.kode_sewa
+         WHERE s.user_plg = ?
+           AND b.jns_byr = 'dp'
+         ORDER BY b.tgl_wkt_byr DESC
+         LIMIT 1"
+    );
+
+    if (!$stmt) {
+        throw new RuntimeException(
+            'Pencarian pembayaran terbaru gagal disiapkan.'
+        );
+    }
+
+    $stmt->bind_param('s', $userPlg);
+
+    if (!$stmt->execute()) {
+        $stmt->close();
+
+        throw new RuntimeException(
+            'Pencarian pembayaran terbaru gagal dijalankan.'
+        );
+    }
+
+    $data = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+
+    if (!$data) {
+        return null;
+    }
+
+    return $this->getPembayaranPenyewaByKodeSewa(
+        (string) $data['kode_sewa'],
+        $userPlg
+    );
+}
 }

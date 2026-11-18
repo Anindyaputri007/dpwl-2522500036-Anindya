@@ -44,3 +44,7 @@ $route['transaksi/checkout'] = 'Transaksi_controller/checkout';
 $route['admin/mobil'] = 'Mobil_controller/index';
 $route['admin/penyewa'] = 'Manajemen_penyewa_controller/index';
 $route['admin/penyewa/tambah'] = 'Manajemen_penyewa_controller/tambah';
+
+// P9: Pembayaran
+$route['pembayaran'] = 'Pembayaran_controller/index';
+$route['pembayaran/upload'] = 'Pembayaran_controller/upload';
