@@ -70,3 +70,4 @@ Pada tahap ini dilakukan pembuatan fitur verifikasi pembayaran oleh admin untuk 
 
 Fitur verifikasi pembayaran admin berhasil dibuat dan diuji. Admin dapat melihat bukti pembayaran serta menerima atau menolak pembayaran penyewa.
 
+
