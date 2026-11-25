@@ -37,6 +37,19 @@ Memastikan aplikasi dapat diakses melalui http://localhost/dpwl-2522500036/.
 - Menghitung Sisa Kewajiban dan Memvalidasi Pelunasan
 - Menambahkan method simpanPelunasan() pada application/models/Pembayaran_model.php.
 
+# Tahap 4
+## Implementasi Controller Pelunasan
+* D.1
+- Menambahkan method pelunasanIndex() pada Pembayaran_controller.php.
+
+* D.2
+- Menambahkan method pelunasanDetail() pada Pembayaran_controller.php.
+
+* D.3
+- Menambahkan method prosesPelunasan() pada Pembayaran_controller.php.
+
+* D.4
+- Menambahkan method dokumenTransaksi() pada Pembayaran_controller.php.
 
 
 
