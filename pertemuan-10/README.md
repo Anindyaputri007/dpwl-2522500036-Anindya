@@ -59,5 +59,14 @@ Memastikan aplikasi dapat diakses melalui http://localhost/dpwl-2522500036/.
 * E.2
 Menambahkan menu Pelunasan Transaksi pada sidebar admin di application/views/templates/sidebar.php.
 
+# Tahap 6
+## Membuat View Daftar dan Detail Pelunasan
+
+* F.1
+- Membuat View `application/views/admin/pelunasan.php`.
+
+* F.2
+- Membuat View `application/views/admin/pelunasan_detail.php`.
+
 
 
