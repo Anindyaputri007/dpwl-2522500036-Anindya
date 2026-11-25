@@ -51,6 +51,13 @@ Memastikan aplikasi dapat diakses melalui http://localhost/dpwl-2522500036/.
 * D.4
 - Menambahkan method dokumenTransaksi() pada Pembayaran_controller.php.
 
+# Tahap 5
+## Membuat Route dan Integrasi Menu Pelunasan
+* E.1
+- Menambahkan route daftar pelunasan, detail pelunasan, proses pelunasan, dan dokumen transaksi pada application/config/routes.php.
+
+* E.2
+Menambahkan menu Pelunasan Transaksi pada sidebar admin di application/views/templates/sidebar.php.
 
 
 
