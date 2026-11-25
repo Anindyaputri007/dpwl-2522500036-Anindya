@@ -8,15 +8,33 @@ Memastikan aplikasi dapat diakses melalui http://localhost/dpwl-2522500036/.
 ## Tahap 2
 ## Menyesuaikan Struktur Basis Data untuk Status Transaksi Lunas
 * B.1
-
 - Membuka database `db_dpwl_anin` melalui phpMyAdmin.
 - Memeriksa struktur tabel `t_sewa`, khususnya kolom `status_sewa`.
 - Memeriksa nilai ENUM yang sudah tersedia.
-* B.2
 
+* B.2
 - Menambahkan nilai ENUM `lunas` pada kolom `status_sewa`.
 - Mempertahankan seluruh nilai ENUM sebelumnya.
-* B.3
 
+* B.3
 - Memverifikasi perubahan melalui tab Structure.
 - Memastikan perubahan hanya dilakukan pada kolom `status_sewa`.
+
+## Tahap 3
+## Mengambil Daftar Transaksi yang Memenuhi Syarat Pelunasan
+* C.1
+- Menambahkan method getDaftarPelunasan() pada application/models/Pembayaran_model.php.
+
+* C.2
+- Mengambil Detail Transaksi dan Riwayat Pembayaran
+- Menambahkan method getDetailPelunasan(string $kodeSewa) pada application/models/Pembayaran_model.php.
+
+* C.3
+- Membuat Kode Pembayaran Pelunasan
+- Menambahkan method internal buatKodeBayarPelunasan(string $tanggalKode) pada application/models/Pembayaran_model.php.
+
+* C.4
+- Menghitung Sisa Kewajiban dan Memvalidasi Pelunasan
+- Menambahkan method simpanPelunasan() pada application/models/Pembayaran_model.php.
+
+

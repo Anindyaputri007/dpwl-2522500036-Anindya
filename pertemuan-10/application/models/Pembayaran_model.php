@@ -953,4 +953,77 @@ class Pembayaran_model
       throw $e;
     }
   }
+  /** 
+ * P10: Mengambil daftar transaksi yang dapat diproses pelunasannya. 
+ * 
+ * Total transaksi menggunakan snapshot tarif pada t_pilih. 
+ * Pembayaran yang mengurangi kewajiban hanya yang berstatus valid. 
+ */ 
+public function getDaftarPelunasan(): array 
+{ 
+  $stmt = $this->db->prepare( 
+    "SELECT 
+      s.kode_sewa, 
+      s.tgl_mulai, 
+      s.tgl_selesai, 
+      s.status_sewa, 
+      p.user_plg, 
+      p.nm_lngkp, 
+      p.no_hp, 
+      COALESCE(( 
+        SELECT SUM(tp.hrg_sewa * tp.n_hari) 
+        FROM t_pilih tp 
+        WHERE tp.kode_sewa = s.kode_sewa 
+      ), 0) AS total_transaksi, 
+      COALESCE(( 
+        SELECT SUM(b.nominal) 
+        FROM t_bayar b 
+        WHERE b.kode_sewa = s.kode_sewa 
+          AND b.sttus_byr = 'valid' 
+      ), 0) AS total_terbayar 
+    FROM t_sewa s 
+    INNER JOIN t_penyewa p 
+      ON p.user_plg = s.user_plg 
+    WHERE s.status_sewa IN ('disetujui', 'lunas') 
+      AND EXISTS ( 
+        SELECT 1 
+        FROM t_pilih tp 
+        WHERE tp.kode_sewa = s.kode_sewa 
+      ) 
+    ORDER BY s.tgl_mulai DESC, s.kode_sewa DESC" 
+  ); 
+ 
+  if (!$stmt) { 
+    throw new RuntimeException( 
+      'Query daftar pelunasan gagal disiapkan.' 
+    ); 
+  } 
+ 
+  if (!$stmt->execute()) { 
+    $stmt->close(); 
+    throw new RuntimeException( 
+      'Daftar pelunasan gagal diambil.' 
+    ); 
+  } 
+ 
+  $daftar = $stmt->get_result()->fetch_all(MYSQLI_ASSOC); 
+  $stmt->close(); 
+ 
+  foreach ($daftar as &$item) { 
+    $item['total_transaksi'] = (int) $item['total_transaksi']; 
+    $item['total_terbayar'] = (int) $item['total_terbayar']; 
+    $item['sisa_kewajiban'] = max( 
+ 0, 
+      $item['total_transaksi'] - $item['total_terbayar'] 
+    ); 
+  } 
+  unset($item); 
+ 
+return array_values(array_filter( 
+    $daftar, 
+    static fn(array $item): bool => 
+    $item['sisa_kewajiban'] > 0 || 
+      $item['status_sewa'] === 'lunas' 
+  )); 
+}
 }
