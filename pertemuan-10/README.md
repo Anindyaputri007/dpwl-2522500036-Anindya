@@ -68,5 +68,13 @@ Menambahkan menu Pelunasan Transaksi pada sidebar admin di application/views/tem
 * F.2
 - Membuat View `application/views/admin/pelunasan_detail.php`.
 
+# Tahap 7
+## Membuat Dokumen Transaksi
 
+* G.1
+- Membuat View `application/views/admin/dokumen_transaksi.php`.
+- Menampilkan informasi transaksi dan status penyewaan.
+
+* G.2
+- Menguji tampilan dokumen transaksi.
 
