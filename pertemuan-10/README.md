@@ -38,3 +38,6 @@ Memastikan aplikasi dapat diakses melalui http://localhost/dpwl-2522500036/.
 - Menambahkan method simpanPelunasan() pada application/models/Pembayaran_model.php.
 
 
+
+
+
