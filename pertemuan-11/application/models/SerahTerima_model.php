@@ -37,7 +37,7 @@ WHERE tp.kode_sewa = s.kode_sewa
 FROM t_sewa s
 INNER JOIN t_penyewa p
 ON p.user_plg = s.user_plg
-WHERE s.status_sewa = 'disetujui','lunas','aktif'
+WHERE s.status_sewa = 'disetujui'
 AND EXISTS (
 SELECT 1
 FROM t_bayar b
@@ -419,5 +419,4 @@ $this->db->rollback();
 throw $e;
 }
 }
-
 }
