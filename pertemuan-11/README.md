@@ -2,7 +2,7 @@
 # P11 – Pemenuhan atau Penyerahan Objek Transaksi dengan MVC
 ## A. Dokumentasi Persiapan Baseline P10
 ### A.1. Workspace dan Artefak P10
-Artefak P10 telah disalin ke workspace `dpwl-nim\` sebagai dasar pengembangan P11. Pengembangan
+Artefak P10 telah disalin ke workspace `dpwl-2522500036\` sebagai dasar pengembangan P11. Pengembangan
 dilakukan secara kumulatif dengan mempertahankan struktur dan fitur aplikasi sebelumnya.
 ### A.2. Struktur Aplikasi dan Basis Data
 Struktur aplikasi homemade MVC dan basis data MySQL telah diperiksa. Tabel yang digunakan dalam
